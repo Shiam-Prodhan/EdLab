@@ -1,0 +1,443 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+	text-transform: uppercase;
+}
+body{
+    margin: 0;
+}
+
+/* scrollable bar with gradient background */
+
+/* scrollable bar ends */
+/* card view details */
+
+.contact-card{
+    display: grid;
+	padding: 50px;
+    grid-template-columns: repeat(2,auto);
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+}
+.contact-card div p{
+    font-family: monospace;
+    margin-top: -5px;
+    font-size: 11px;
+}
+.contact-card h3{
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.contact-address{
+    padding-left: 5%;
+    width: 45vh;
+}
+.contact-card a{
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+
+/* the phone number in the address part */
+.contact-card a:hover{
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 18px;
+    background-color: rgb(0,255,188);
+    background: radial-gradient(circle, rgba(0,255,188,1) 0%, rgba(0,155,255,1) 100%);
+    border-radius: 20px;
+    color: black;
+    font-weight: bold;
+}
+/* design for main map */
+.contact-MAP{
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    height: auto;
+    transition: 4s;
+    transition-timing-function: ease-in;
+    -webkit-transition: 4s;
+    -webkit-transition-timing-function: ease-in;
+}
+
+
+/* for all iframe (map) design */
+iframe{
+    border-radius: 10px;
+    border-color: rgba(31, 31, 31, 0.685);
+    border-style: double;
+    border-block: 10px;
+    
+}
+/* map design ends */
+/* Card view ends */
+
+/* FlexBox Design Team and Feedback shown side by side*/
+.contact-flexBox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* all links in side griditem info (mail and phone of team members) */
+.contact-info b ~ a{
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(19, 18, 18);
+
+}
+
+/* information of members */
+.contact-info{
+    width: 20vh;
+    height: 40vh;
+    font-family: sans-serif;
+    font-size: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    display: none; /*None because it will show when hover is found over griditem*/
+}
+
+/* grid view to show team members in a 3*3 box format */
+.contact-grid{
+    display: grid;
+	padding:50px;
+    grid-template-columns: repeat(2, auto);
+    gap: 10em;
+    justify-content: space-evenly;
+    margin-left: 2em;
+    list-style-type: none;
+    margin-bottom: 5%;
+}
+
+/* cartoon image of each members */
+.contact-grid img{
+    cursor: pointer;
+    background: rgb(0,255,188);
+    background: radial-gradient(circle, rgba(0,255,188,1) 0%, rgba(0,155,255,1) 100%);
+    border-radius: 50rem;
+}
+
+.contact-griditem{
+    width: fit-content;
+    height: fit-content;
+}
+
+/* image dances when hover over griditem use of Transition and transform property to show animation */
+.contact-grid .contact-griditem:hover img{
+    
+    transition: 500ms;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+    -webkit-transition-timing-function: ease;
+    transform: rotateY(359deg);
+    -ms-transform: rotateY(359deg);       
+    display: inherit;
+}
+
+/* Members info show when hover over griditem the info is shown inline display */
+.contact-grid .contact-griditem:hover p + .contact-info{
+    width: inherit;
+    background-color: white;
+    align-items: center;
+    transition: 500ms;
+    transition-delay: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    display: inline;
+    z-index: 12;
+}
+
+
+/*hover on emoji to show the mailing data*/
+
+.contact-emoji{
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.contact-mail{
+    visibility: hidden;
+}
+
+.contact-info a:hover + .contact-mail{
+    transition-delay: 150ms;
+    transition: 250ms;    
+    transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    visibility: inherit;
+    display: inline-block;
+    
+}
+/*mail hover design ends*/
+
+/* FeedBack form design */
+.contact-form{
+    background-color: rgba(255, 228, 196, 0.699);
+    border-radius: 1rem;
+    border-color: #2222;
+    border: 2px solid;
+    height: 390px;
+    justify-content: space-evenly;
+}
+.contact-form .contact-feed{
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+input,textarea{
+    border: 2px solid #00000069;
+    margin: 1px 0 0 2px;
+
+}
+
+.contact-feed textarea{
+    width: 100%;
+    height: 50%; 
+    overflow: hidden;
+    resize: none;
+}
+
+
+.contact-feed  button{
+    margin: 2em 0 0 3em;
+    width: 90px;
+    height: 20%;
+    border: #122 px;
+    border-radius: 10rem;
+    transition: 250ms ease-in-out;
+    transition-property: all;
+    transition-duration: 800ms;
+}
+
+/* When all the required boxes of Feedback is filled properly */
+
+form:valid button{
+    border: #122;
+    border-radius: 10rem;
+    transition: 250ms ease-in-out;
+    transition-property: all;
+    transition-duration: 800ms;
+    cursor: pointer;
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: rgb(48, 48, 48);
+    font-weight: bold;
+    transform: translateY(-7px);
+}
+.contact-ConfirmationMessage{
+    visibility: hidden;
+    width: 22rem;
+    height: 2rem;
+    text-align: center;
+    vertical-align: middle;
+    background: rgb(154,0,255);
+    background: linear-gradient(66deg, rgba(154,0,255,0.5718662464985995) 0%, rgba(42,44,255,0.8379726890756303) 50%, rgba(0,189,255,0.5858718487394958) 100%);
+    position: absolute;
+    border-radius: 1rem;
+    margin-left: -35px;
+    transform: translateY(-20px);
+    font-size: 20PX;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    font-family: Georgia;
+    transition: 250ms;
+    transition-delay: 100ms;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+    transition-property: all;
+
+    -webkit-transition: 200ms;
+    -webkit-transition-duration: 500ms;
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-property: all;
+}
+.contact-error{
+    visibility: hidden;
+    font-size: 12px ;
+    text-align: center; 
+    color:red;
+    text-shadow: 3px 3px 3px rgba(238,255,49,0.89); 
+    margin: -8px 0 0 0; 
+    transition: 250ms ease-in-out;
+    transition-duration: 500ms;
+    transform: translateY(-10px);
+    transition-property: all;
+}
+
+
+footer{
+    width: initial;
+    height: 12em;
+    margin: 0;
+    
+    background-color: #456;
+}
+.contact-team{
+    text-align: center;
+    margin-top: 10px;
+    margin-left: -30rem;
+}
+
+/* Captcha */
+#contact-code{
+    width: 250px;
+    height: 100px;
+    padding: 10% 0% 10% 0%;
+    background-color: rgba(49, 49, 49, 0.767);
+    text-align: center;
+    border: 4px;
+    color: rgba(230, 239, 247, 0.925);
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.938);
+    letter-spacing: 8px;
+    font-family: 'Beth Ellen', cursive;
+    font-weight: bolder;
+}
+
+span{
+    width: 100%;
+    padding: 0 2rem 0 7.5rem;
+}
+span:hover{
+    color: darkcyan;
+    transition: 250ms ease-in-out;
+    transition-duration: 250ms;
+    transition-property: color;
+    cursor: pointer;
+    -webkit-transition: 250ms ease-in-out;
+    -webkit-transition-duration: 250ms;
+    -webkit-transition-property: color;
+
+}
+.butText{
+    direction: none;
+}
+
+
+.contact-inputCaptcha{
+    
+    margin: -32px 1px 0 13px;
+}
+
+div .contact-code{
+    padding-left: 5rem;
+}
+
+/* responsive */
+
+@media screen  and (max-width: 800px) {
+    .contact-team{
+        text-align: center;
+        margin-top: 10px;
+        margin-left: -20rem;
+    }
+    /* grid column number changed */
+    .contact-grid{
+        transition: 500ms;
+        transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        gap: 2em 1em;
+        justify-content: space-evenly;
+        margin-left: 2em;
+        list-style-type: none;
+        margin-bottom: 8%;
+    }
+/* footer height changed */
+    footer{
+        width: initial;
+        height: 11em;
+        margin: 0;
+    
+
+    }
+
+    
+}
+@media screen  and (max-width: 600px) {
+    .contact-team{
+        text-align: center;
+        margin-top: 10px;
+        margin-left: -20rem;
+    }
+    /* Card display changed */
+    .contact-card{
+        display: inline-block;
+        margin-left: 12px;
+        align-items: center;
+
+    }
+
+    /* grid column number changed */
+    .contact-grid{
+        transition: 500ms;
+        transition-timing-function: ease-out;
+        -webkit-transition-timing-function: ease-out;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 2em 1em;
+        justify-content: space-evenly;
+        margin-left: 2em;
+        list-style-type: none;
+        margin-bottom: 9%;
+    }
+/* info display changed to inline-flex */
+    .contact-grid .contact-griditem:hover p + .contact-info{
+        width: inherit;
+        background-color: white;
+        align-items: center;
+        transition: 500ms;
+        transition-delay: 200ms;
+        transition-timing-function: ease-in-out;
+        -webkit-transition-timing-function: ease-in-out;
+        visibility: visible;
+        opacity: 1;
+        position: absolute;
+        display: inline-flex;
+        z-index: 12;
+    }
+/* mail class display none */
+    .contact-griditem .contact-info .contact-mail{
+        display: none;
+    }
+    /* subinfo shows ID and mail emoji vertically */
+    .contact-subinfo{
+        display: inline-block;
+        padding: 10px 5px 5px 5px;
+    }
+    .contact-info a:hover + .contact-mail{
+        display: none;
+        cursor: pointer;        
+    }
+    
+}
+
+@media screen  and (max-width: 300px) 
+{
+    .contact-team{
+        text-align: center;
+        margin-top: 10px;
+        margin-left: -10rem;
+    }
+    /* card display changed */
+    .contact-card{
+        display: inline-block;
+
+    }
+
+    /* flexbox gap changed (gap between team members and feedback */
+    .contact-flexBox{
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    
+}

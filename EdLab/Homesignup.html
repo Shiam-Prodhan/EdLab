@@ -1,0 +1,121 @@
+<?php 
+  
+session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: Home.html');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: Home.html");
+  }
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>EdLab</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="stylehome.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+
+</head>
+
+<body>
+	<nav id ="nav">
+         <label class="logo">EDLAB</label>
+         <ul>
+            <li><a class="active" href="http://localhost/Edlab/Homesignin.html">Home</a></li>
+            <li>
+               <a href="#">Course Catalog
+               <i class="fas fa-caret-down"></i>
+               </a>
+               <ul>
+                  <li><a href="http://localhost/Edlab/Engineering1.html">Engineering</a></li>
+                  <li><a href="http://localhost/Edlab/Others1.html">Others</a></li>
+				  
+               </ul>
+            </li>
+			<li><a href="http://localhost/Edlab/addcourse.php">Add Course</a></li>
+			<!-- logged in user information -->
+			<?php  if (isset($_SESSION['username'])) : ?>
+				
+				<li> <a href="index.php?logout='1'">Logout</a> </li>
+			<?php endif ?>
+         </ul>
+
+    
+      </nav>
+      <section></section>
+	  
+	
+	<div id="project">
+				<div id="projects">
+						<h1 id="project1"><u>Recommended Courses</u></h1>
+							<div class="pp1">
+								<img src =  "./Image/graphics.jpg" alt =  " " >
+									<div class = "content">
+										<h2>Graphics Desiging</h3>
+										<p>Graphic design is a craft where professionals create visual content to communicate messages. 
+										By applying visual hierarchy and page layout techniques, designers use typography and pictures 
+										to meet users’ specific needs and focus on the logic of displaying elements in interactive designs, 
+										to optimize the user experience.</p>
+									</div>
+									<button type="submit" class="enroll"">Resume</a></button>
+							</div>
+							
+							
+							<div class="pp2">
+									<img src =  "./Image/machine.jpg" alt =  " " >
+									<div class = "content">
+										<h2>Machine Learning</h3>
+										<p>Machine learning is an important component of the growing field of data science. Through the use 
+										of statistical methods, algorithms are trained to make classifications or predictions, uncovering key
+										insights within data mining projects. These insights subsequently drive decision making within applications 
+										and businesses, ideally impacting key growth metrics.</p>
+									</div>
+									<button type="submit" class="enroll"">Resume</a></button>
+							</div>
+							
+							<div class="pp3">
+									<img src =  "./Image/algo.jpg" alt =  " " >
+									<div class = "content">
+										<h2>Algorithm</h2>
+										<p>In computing, algorithms provide computers with a successive guide to completing actions. They’re comprised of 
+										a precise list of instructions that outline exactly how to complete a task. Algorithms are used throughout all areas 
+										of IT and computing. They can manipulate and process data and perform calculations or actions in various ways.</p>
+									</div>
+									<button type="submit" class="enroll"">Resume</a></button>
+							</div>
+							<div class="pp5">
+									<img src =  "./Image/python.jpg" alt =  " " >
+									<div class = "content">
+										<h2>Python</h2>
+										<p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level
+										built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application 
+										Development, as well as for use as a scripting or glue language to connect existing components together.  </p>
+									</div>
+									<button type="submit" class="enroll""> <a id="button" href="http://localhost/Edlab/payment.php">Enroll</a></button>
+							</div>
+							
+							<div class="pp6">
+									<img src =  "./Image/marketing.jpg" alt =  " " >
+									<div class = "content">
+										<h2>Marketing</h2>
+										<p>Marketing refers to activities a company undertakes to promote the buying or selling of a product or service. Marketing
+										includes advertising, selling, and delivering products to consumers or other businesses. Some marketing is done by affiliates 
+										on behalf of a company.</p>
+									</div>
+									<button type="submit" class="enroll""> <a id="button" href="http://localhost/Edlab/payment.php">Enroll</a></button>
+							</div>				
+		</div>
+
+
+<body>
+
+<html>
